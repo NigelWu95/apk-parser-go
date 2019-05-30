@@ -1,0 +1,9 @@
+# IntelliJ
+.idea/
+out/
+
+# Vscode
+.vscode/
+
+pkg/
+bin/

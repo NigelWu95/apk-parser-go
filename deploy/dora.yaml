@@ -1,0 +1,21 @@
+
+---
+ufopname: aparser # ufop 名称，使用 qdoractl list 命令获取可用 image 列表
+verstr: v10 # 当前版本名称
+image: aparser:latest # 使用的 image，需要带上 tag, 使用 qdoractl image 命令获取可用 image 列表
+desc:  # 描述信息，可选
+flavor: C8M16 # 运行实例的机器配置，不同的配置单实例价格不一样，使用 qdoractl flavor 命令获取可用的配置列表
+health_check:
+  path: "/health" # 健康检查的 url 相对路径，平台会试图通过访问这个 url 来判断某个实例是否存活，返回 200 即可
+  # timeout: 3 # 调用监控检查 API 的时间间隔，默认 3s
+  
+  # 如果实例实现了监控检查 API，请去掉上面两行的注释
+env:  # app 启动的时候附加的环境变量，global 代表所有 region 都有的环境变量、z0 代表 z0 region 独有的环境变量
+  # global:
+  #   - key: ENV_KEY
+  #     value: ENV_VALUE
+  # z0:
+  #   - key: ENV_KEY
+  #     value: ENV_VALUE
+
+log_file_paths: [] # OPTIONAL 用户日志路径，会采集该路径下的用户日志，系统也会对该目录下的已采集日志进行自动回收。
