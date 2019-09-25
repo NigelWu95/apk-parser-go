@@ -2,11 +2,11 @@ package main
 
 import (
 	"fmt"
-	"github.com/qiniu/log"
 	"os"
+	"qiniupkg.com/x/log.v7"
 	"runtime"
 	"ufop"
-	"ufop/miaopai"
+	"ufop/apk"
 )
 
 const (
@@ -45,7 +45,7 @@ func main() {
 	ufopServ := ufop.NewServer(ufopConf)
 
 	//register job handlers
-	if err := ufopServ.RegisterJobHandler("miaopai.conf", &miaopai.APKParser{}); err != nil {
+	if err := ufopServ.RegisterJobHandler("parser.conf", &apk.APKParser{}); err != nil {
 		log.Error(err)
 	}
 

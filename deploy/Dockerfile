@@ -3,9 +3,9 @@ MAINTAINER wubingheng@qiniu.com
 
 ENV LANG C.UTF-8
 
-RUN mkdir -p /root/miaopai
-ADD miaopai-aparser-linux_amd64 /root/miaopai
-ADD qufop.conf /root/miaopai
+RUN mkdir -p /root/ufop
+ADD apk-parser-linux_amd64 /root/ufop
+ADD qufop.conf /root/ufop
 
 #ENV JAVA_HOME /root/walle/jdk1.8.0_11
 #ENV CLASSPATH ${JAVA_HOME}/lib/dt.jar:${JAVA_HOME}/lib/tools.jar
@@ -14,6 +14,6 @@ ADD qufop.conf /root/miaopai
 
 EXPOSE 9100
 
-WORKDIR /root/miaopai
-ENTRYPOINT ./miaopai-aparser-linux_amd64 qufop.conf
+WORKDIR /root/ufop
+ENTRYPOINT ./apk-parser-linux_amd64 qufop.conf
 
